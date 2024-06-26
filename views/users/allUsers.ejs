@@ -1,0 +1,47 @@
+<h1>Dashboard</h1>
+
+<a href="/api/worko/user">Add New User</a>&ensp;
+<a href="/admin/export-users">Export Users</a>&emsp;
+<a href="/admin/export-users-pdf">Export Users into pdf</a>
+<br/>
+<br/>
+
+<form >
+    <input type="text" name="search" placeholder="Search user name, email, mobile"/>
+    <input type="submit" value="Search"/>
+
+</form>
+<table width="70%">
+    <tr align="left">
+        <th>Email</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>zipCode</th>
+        <th>isActive</th>
+        <th>Action</th>
+    </tr>
+<% if (users.length>0) { %>
+     <% for(let i=0;i<users.length;i++){ %>
+          <tr>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].age %></td>
+            <td><%= users[i].city %></td>
+            <td><%= users[i].zipCode %></td>
+            <td><%= users[i].isActive %></td>
+            <td><a href="/api/worko/edituser/<%= users[i]._id %>">Edit</a></td>
+            <td><a href="/api/worko/deleteuser/<%= users[i]._id %>">Delete</a></td>
+          </tr>
+        <% } %>
+
+<% } else { %>
+    <tr>
+        <td colspan="5">Users not found</td>
+<% } %>
+    </tr>
+ 
+</table>
+<br/>
+<br/>
+<a href="/admin/home">Go to Home</a>

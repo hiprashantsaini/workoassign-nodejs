@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create a new user</title>
+</head>
+<body>
+
+        <div class="register">
+            <h1>Create a new user</h1>
+            <form action="/api/worko/user" method="post"><!--enctype for images etc.-->
+                <input type="email" name="email" placeholder="Enter Email" required />
+                <br /><br />
+                <input type="text" name="name" placeholder="Enter Name" required />
+                <br /><br />
+                <input type="number" name="age" placeholder="Enter age" required />
+                <br /><br />
+                <input type="text" name="city" placeholder="Enter city" required />
+                <br /><br />
+                <input type="text" name="zipCode" placeholder="Enter zipCode" required />
+                <br /><br />
+                <input type="submit" value="Create Users" />
+            </form>
+        </div>
+
+
+</body>
+</html>
